@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171013 14:06:51.143" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="d:\git\lpve_robot\testsuites" id="s1" name="Testsuites">
+<suite source="d:\git\lpve_robot\testsuites\testsuite1" id="s1-s1" name="Testsuite1">
+<suite source="d:\git\lpve_robot\testsuites\testsuite1\testcases.robot" id="s1-s1-s1" name="Testcases">
+<test id="s1-s1-s1-t1" name="Echo">
+<kw name="Connect" library="WebSocketClient">
+<arguments>
+<arg>ws://echo.websocket.org</arg>
+</arguments>
+<assign>
+<var>${my_websocket}</var>
+</assign>
+<msg timestamp="20171013 14:06:57.472" level="INFO">${my_websocket} = &lt;websocket._core.WebSocket object at 0x04008650&gt;</msg>
+<status status="PASS" endtime="20171013 14:06:57.472" starttime="20171013 14:06:51.217"></status>
+</kw>
+<kw name="Send" library="WebSocketClient">
+<arguments>
+<arg>${my_websocket}</arg>
+<arg>Hello</arg>
+</arguments>
+<status status="PASS" endtime="20171013 14:06:57.473" starttime="20171013 14:06:57.472"></status>
+</kw>
+<kw name="Recv" library="WebSocketClient">
+<arguments>
+<arg>${my_websocket}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20171013 14:06:57.604" level="INFO">${result} = Hello</msg>
+<status status="PASS" endtime="20171013 14:06:57.604" starttime="20171013 14:06:57.473"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>Hello</arg>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20171013 14:06:57.604" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'str'&gt;</msg>
+<status status="PASS" endtime="20171013 14:06:57.605" starttime="20171013 14:06:57.604"></status>
+</kw>
+<kw name="Close" library="WebSocketClient">
+<arguments>
+<arg>${my_websocket}</arg>
+</arguments>
+<status status="PASS" endtime="20171013 14:06:57.737" starttime="20171013 14:06:57.605"></status>
+</kw>
+<status status="PASS" endtime="20171013 14:06:57.737" critical="yes" starttime="20171013 14:06:51.216"></status>
+</test>
+<doc>This is a REST testing training project</doc>
+<status status="PASS" endtime="20171013 14:06:57.737" starttime="20171013 14:06:51.181"></status>
+</suite>
+<status status="PASS" endtime="20171013 14:06:57.739" starttime="20171013 14:06:51.179"></status>
+</suite>
+<status status="PASS" endtime="20171013 14:06:57.740" starttime="20171013 14:06:51.158"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testsuites" pass="1">Testsuites</stat>
+<stat fail="0" id="s1-s1" name="Testsuite1" pass="1">Testsuites.Testsuite1</stat>
+<stat fail="0" id="s1-s1-s1" name="Testcases" pass="1">Testsuites.Testsuite1.Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
